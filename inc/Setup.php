@@ -15,6 +15,7 @@ final class Setup
     add_action('login_head', [self::class, 'custom_login_styles']);
     add_action('login_headerurl', [self::class, 'custom_login_logo_url']);
     add_action('login_headertext', [self::class, 'custom_login_logo_url_title']);
+    add_filter('wp_img_tag_add_auto_sizes', '__return_false');
   }
 
   public static function register_menus()
