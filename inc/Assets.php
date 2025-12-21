@@ -16,10 +16,12 @@ class Assets
 
   public static function enqueue_assets()
   {
-    // wp_enqueue_style('swiper-css', WP_STARTER_THEME_URI . '/assets/css/swiper-bundle.min.css', [], filemtime( WP_STARTER_THEME_DIR . '/assets/css/swiper-bundle.min.css') ?: '1.0.0');
-    // wp_enqueue_script('swiper-js', WP_STARTER_THEME_URI . '/assets/js/swiper-bundle.min.js', [], filemtime( WP_STARTER_THEME_DIR . '/assets/js/swiper-bundle.min.js') ?: '1.0.0', true);
+    if (!is_admin()) {
+      // wp_enqueue_style('swiper-css', WP_STARTER_THEME_URI . '/assets/css/swiper-bundle.min.css', [], filemtime( WP_STARTER_THEME_DIR . '/assets/css/swiper-bundle.min.css') ?: '1.0.0');
+      // wp_enqueue_script('swiper-js', WP_STARTER_THEME_URI . '/assets/js/swiper-bundle.min.js', [], filemtime( WP_STARTER_THEME_DIR . '/assets/js/swiper-bundle.min.js') ?: '1.0.0', true);
 
-    wp_enqueue_style('style-css', WP_STARTER_THEME_URI . '/assets/css/style.css', [], filemtime(WP_STARTER_THEME_DIR . '/assets/css/style.css') ?: ASSETS_VERSION);
-    wp_enqueue_script('script-js', WP_STARTER_THEME_URI . '/assets/js/script.js', [], filemtime(WP_STARTER_THEME_DIR . '/assets/js/script.js') ?: ASSETS_VERSION, true);
+      wp_enqueue_style('style-css', WP_STARTER_THEME_URI . '/assets/css/style.css', [], filemtime(WP_STARTER_THEME_DIR . '/assets/css/style.css') ?: ASSETS_VERSION);
+      wp_enqueue_script('script-js', WP_STARTER_THEME_URI . '/assets/js/script.js', [], filemtime(WP_STARTER_THEME_DIR . '/assets/js/script.js') ?: ASSETS_VERSION, true);
+    }
   }
 }
