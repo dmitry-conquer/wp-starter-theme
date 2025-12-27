@@ -30,6 +30,7 @@ use \WP_Starter_Theme\Setup;
 use \WP_Starter_Theme\Editor;
 use \WP_Starter_Theme\Menu;
 use \WP_Starter_Theme\Shortcodes;
+use \WP_Starter_Theme\Utils;
 
 // Load autoloader for class management
 require_once WP_STARTER_THEME_DIR . '/inc/Autoloader.php';
@@ -41,3 +42,4 @@ Setup::register();
 Editor::register();
 Menu::register();
 Shortcodes::register();
+Utils::register();
